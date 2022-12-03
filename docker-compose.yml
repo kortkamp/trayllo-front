@@ -1,6 +1,6 @@
 version: '3.9'
 services:
-  next:
+  trayllo_front:
     image: node
     command: /bin/bash -c 'cd /app && npm run dev'
     environment:
