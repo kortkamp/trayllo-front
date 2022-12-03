@@ -1,0 +1,15 @@
+version: '3.9'
+services:
+  trayllo_front:
+    image: node
+    command: /bin/bash -c 'cd /app && npm run dev'
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+    ports:
+      - 3000:3000
+    volumes:
+      - ./app:/app
+    deploy:
+      mode: replicated
+      placement:
+        max_replicas_per_node: 1
