@@ -21,7 +21,7 @@ export default function HeroSection(){
             <div className='pt-32 w-[508px] font-sans '>
               <div className='animate-[slideIn1_0.5s_ease-in-out_1]'>
                 <h1 className='text-white text-2xl leading-tight'>Integração Trello e Tray Commerce</h1>
-                <p className='text-white text-md pt-2'>Nada de perder o controle do seu e-commerce com processos complicados e sistemas confusos que só burocratizam a sua rotina.</p>
+                <p className='text-white text-[21px] pt-2'>Nada de perder o controle do seu e-commerce com processos complicados e sistemas confusos que só burocratizam a sua rotina.</p>
               </div>
               <AppButton variant='secondary' className='mt-4 animate-[slideIn2_1.5s_ease-in-out_1]'>Teste Agora</AppButton>
             </div>
