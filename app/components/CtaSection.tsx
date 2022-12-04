@@ -5,16 +5,16 @@ export default function CtaSection(){
   return (
     <section>
       <SafeArea>
-        <div className="bg-black rounded-md flex justify-evenly items-center h-36 mt-20 relative">
+        <div className="bg-black rounded-md flex justify-evenly items-center h-36 mt-20 relative ">
           <div className="flex items-center absolute left-0">
             <div className="w-[447px] bg-white h-1"></div>
             <div className="bg-white h-5 w-5 rounded-full"></div>
           </div>
-          <div className="flex flex-col ml-96 pl-10">
-            <span className="text-primary-light text-md">
+          <div className="flex flex-col ml-96 pl-10 opacity-70">
+            <span className="text-primary-light text-md font-bold">
               Aproveite agora uma oferta exclusiva
             </span>
-            <span className="text-white text-md">
+            <span className="text-white text-md font-bold">
               15% off lorem ipsum
             </span>
           </div>
