@@ -1,7 +1,7 @@
 import AppButton from "./AppButton";
 import SafeArea from "./SafeArea";
 
-export default function CvaSection(){
+export default function CtaSection(){
   return (
     <section>
       <SafeArea>
