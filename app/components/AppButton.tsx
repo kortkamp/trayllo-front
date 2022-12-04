@@ -17,8 +17,8 @@ export default function AppButton({ size='md', variant='primary', children, clas
           'bg-white hover:bg-primary-light text-primary': variant === 'secondary',
         },
         {
-          'text-xs h-8': size === 'sm',
-          'text-xs h-10': size === 'md',
+          'text-2xs h-8': size === 'sm',
+          'text-xs h-10 w-40': size === 'md',
         },
         className
       )}
