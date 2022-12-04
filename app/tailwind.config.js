@@ -9,7 +9,10 @@ module.exports = {
       'black': '#000',
       'white': '#fff',
       'transparent': '#00000000',
-      'primary':'#490177',
+      'primary': {
+        light: '#E0AFFF',
+        DEFAULT: '#490177',
+      },
       gray: {
         900: '#121214',
         800: '#202024',
@@ -18,19 +21,10 @@ module.exports = {
         100: '#E1E1E6',
   
       },
-      cyan :{
-        500: '#81D8F7',
-        300: '#98E1FB',
-      }
-      
-    
     },
-    // borderRadius: {
-    
-    //   // DEFAULT: '0.25rem',
-    //   DEFAULT: '5px',
-     
-    // },
+    borderRadius: {
+      DEFAULT: '5px',
+    },
     
     fontSize: {
       xs: 13,
@@ -43,7 +37,23 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: 'Open Sans, sans-serif'
-      }
+      },
+      keyframes: {
+        slideIn1: {
+          '0%': { transform: 'translateX(-50vw)' },
+          '100%': { transform: 'translateX(0vw)' },
+        },
+        slideIn2: {
+          '0%': { transform: 'translateX(-100vw)' },
+          '50%': { transform: 'translateX(-100vw)' },
+          '100%': { transform: 'translateX(0vw)' },
+        },
+        slideIn3: {
+          '0%': { transform: 'translateX(200vw)' },
+          '75%': { transform: 'translateX(100vw)' },
+          '100%': { transform: 'translateX(0)' },
+        },
+      },
     },
   },
   plugins: [],
