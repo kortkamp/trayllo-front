@@ -50,7 +50,7 @@ module.exports = {
         },
         slideIn3: {
           '0%': { transform: 'translateX(200vw)' },
-          '75%': { transform: 'translateX(100vw)' },
+          '70%': { transform: 'translateX(100vw)' },
           '100%': { transform: 'translateX(0)' },
         },
       },
