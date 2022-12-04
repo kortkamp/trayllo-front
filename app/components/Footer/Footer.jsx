@@ -15,10 +15,10 @@ const openSans = Open_Sans()
 export default function Footer() {
   return (
     <Fragment>
-        <footer className="bg-[#490177] py-6">
+        <footer className="bg-[#490177] py-6 w-screen">
             <div className="container mx-auto w-9/12">
                 <div className="flex flex-col">
-                    <div className="flex flex-row justify-between mt-5 mb-9">
+                    <div className="flex flex-row justify-between mt-5 mb-9 flex-wrap">
                         <h3 className={`${inter.className} text-2xl text-white`}>Trayllo</h3>
                         <div className={`${openSans.className} flex items-end text-base font-light`}>
                             <Link href="#" className={`${openSans.className} mr-10 text-white`}>Política de Privacidade</Link>
