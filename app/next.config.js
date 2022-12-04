@@ -11,11 +11,23 @@ const nextConfig = {
     }
     return config
   },
+  async redirects() {
+    return [
+        {
+            source: '/',
+            destination: '/app',
+            basePath: false,
+            permanent: false
+        }
+    ]
+  },
   async rewrites() {
     return [
       {
         source: '/',
         destination: `/app`,
+        basePath: false,
+        permanent: false
       },
     ]
   },
