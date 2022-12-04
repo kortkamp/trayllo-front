@@ -18,7 +18,7 @@ export default function CtaSection(){
               15% off lorem ipsum
             </span>
           </div>
-          <div className="mr-10"><AppButton variant="secondary" >Eu Quero</AppButton></div>
+          <div className="mr-10 animate-[zoomIn_2s_ease-in-out_1]"><AppButton variant="secondary" >Eu Quero</AppButton></div>
           <div className="strip1 h-full w-10 bg-blue-500 absolute right-14"></div>
           <div className="strip2 h-full w-4 bg-blue-500 absolute right-8"></div>
         </div>

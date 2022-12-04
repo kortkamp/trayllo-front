@@ -58,6 +58,10 @@ module.exports = {
           '70%': { transform: 'translateX(100vw)' },
           '100%': { transform: 'translateX(0)' },
         },
+        zoomIn: {
+          '0%': { transform: 'scale(0)' },
+          '100%': { transform: 'scale(1)' },
+        },
       },
     },
   },
