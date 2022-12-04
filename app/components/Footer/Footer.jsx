@@ -21,7 +21,7 @@ export default function Footer() {
                     <div className="flex flex-row justify-between mt-5 mb-9">
                         <h3 className={`${inter.className} text-2xl`}>Trayllo</h3>
                         <div className={`${openSans.className} flex items-end text-base font-light`}>
-                            <Link href="#" className="mr-10">Política de Privacidade</Link>
+                            <Link href="#" className={`${openSans.className} mr-10`}>Política de Privacidade</Link>
                             <Link href="#">Termos de Uso</Link>
                         </div>
                     </div>
