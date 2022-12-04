@@ -35,8 +35,8 @@ module.exports = {
       xs: 15,
       sm: 18,
       md: 20,
-      // lg: 20,
-      xl: 24,
+      lg: 24,
+      xl: 48,
       '2xl': 60,
     },
     extend: {
