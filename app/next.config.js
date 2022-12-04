@@ -13,8 +13,8 @@ const nextConfig = {
   async rewrites() {
     return [
       {
-        source: '/:path*',
-        destination: `/:path*`,
+        source: '/',
+        destination: `/app`,
       },
     ]
   },
