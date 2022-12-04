@@ -13,8 +13,8 @@ export default function AppButton({ size='md', variant='primary', children, clas
       className={clsx(
         'font-extrabold rounded px-7 box-border whitespace-nowrap uppercase transition-colors hover:shadow-md',
         {
-          'bg-primary hover:bg-pink-800 text-white': variant === 'primary',
-          'bg-white hover:bg-blue-900 text-primary': variant === 'secondary',
+          'bg-primary  text-white': variant === 'primary',
+          'bg-white hover:bg-primary-light text-primary': variant === 'secondary',
         },
         {
           'text-xs h-8': size === 'sm',
