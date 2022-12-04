@@ -60,6 +60,7 @@ module.exports = {
         },
       },
     },
+    extend: {},
   },
   plugins: [],
 }
