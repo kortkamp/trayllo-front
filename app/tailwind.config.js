@@ -13,24 +13,29 @@ module.exports = {
         light: '#E0AFFF',
         DEFAULT: '#490177',
       },
+      blue:{
+        500: '#0077C2'
+      },
       gray: {
         900: '#121214',
         800: '#202024',
         400: '#7C7C8A',
         200: '#C4C4CC',
         100: '#E1E1E6',
-  
       },
     },
     borderRadius: {
       DEFAULT: '5px',
+      md: '12px',
+      full: '9999px'
     },
     
     fontSize: {
-      xs: 13,
+      '2xs': 13,
+      xs: 15,
       sm: 18,
       md: 20,
-      lg: 20,
+      // lg: 20,
       xl: 24,
       '2xl': 60,
     },
