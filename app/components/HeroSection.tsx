@@ -6,7 +6,7 @@ import SafeArea from '../components/SafeArea'
 export default function HeroSection(){
 
   return (
-    <section className='hero h-[734px] bg-[url("/hero-background.png")] mix-blend-multiply relative overflow-hidden'>
+    <section className='hero h-[734px] bg-[url("/hero-background.png")] mix-blend-multiply relative'>
         <div className='bg-primary absolute inset-0 -z-20 mix-blend-multiply'>
         </div>
         <div className='absolute left-0 top-0 z-10'>
