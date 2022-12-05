@@ -12,8 +12,6 @@ const rubik = Rubik({
 
 export default function HeroSection(){
 
-
-
   return (
     <section className='hero h-[734px] bg-[url("/hero-background.png")] mix-blend-multiply relative'>
         <div className='bg-primary absolute inset-0 -z-20 mix-blend-multiply'>
@@ -34,8 +32,8 @@ export default function HeroSection(){
               </div>
               <AppButton variant='secondary' className='mt-4 animate-[slideIn2_1.5s_ease-in-out_1]'>Teste Agora</AppButton>
             </div>
-            <div className='absolute -right-32 top-10 -z-10 animate-[slideIn3_2.5s_ease-in-out_1]'>
-              <Image src="/computador.png" alt="Computador" width={969} height={772} />
+            <div className='absolute -right-32 top-10 -z-10 overflow-hidden'>
+              <Image src="/computador.png" alt="Computador" width={969} height={772} className='animate-[slideIn3_2.5s_ease-in-out_1]' />
             </div>
         </SafeArea>
       </section>
