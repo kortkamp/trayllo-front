@@ -19,6 +19,7 @@ module.exports = {
       gray: {
         900: '#121214',
         800: '#202024',
+        750: '#262626',
         400: '#7C7C8A',
         200: '#C4C4CC',
         100: '#E1E1E6',
@@ -41,7 +42,9 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        sans: 'Open Sans, sans-serif'
+        sans: 'Open Sans, sans-serif',
+        rubik: 'Rubik, sans-serif',
+        orelega: 'Orelega One, serif'
       },
       keyframes: {
         slideIn1: {
@@ -50,12 +53,12 @@ module.exports = {
         },
         slideIn2: {
           '0%': { transform: 'translateX(-100vw)' },
-          '50%': { transform: 'translateX(-100vw)' },
+          '50%': { transform: 'translateX(-50vw)' },
           '100%': { transform: 'translateX(0vw)' },
         },
         slideIn3: {
-          '0%': { transform: 'translateX(200vw)' },
-          '70%': { transform: 'translateX(100vw)' },
+          '0%': { transform: 'translateX(100vw)' },
+          '50%': { transform: 'translateX(100vw)' },
           '100%': { transform: 'translateX(0)' },
         },
         zoomIn: {
