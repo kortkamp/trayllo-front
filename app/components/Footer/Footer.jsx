@@ -16,7 +16,7 @@ const openSans = Open_Sans()
 export default function Footer() {
   return (
     <Fragment>
-        <footer className="bg-[#490177] py-6 ">
+        <footer className="bg-[#490177] py-6 mt-20">
             <SafeArea>
                 <div className="container mx-auto">
                     <div className="flex flex-col">
