@@ -10,7 +10,10 @@ const inter = Inter({
     subsets: ['latin'] 
     })
 
-const openSans = Open_Sans()
+const openSans = Open_Sans({
+    weight: '300',
+    subsets: ['latin']
+})
 
 export default function Footer() {
   return (
