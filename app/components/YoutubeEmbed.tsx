@@ -10,10 +10,10 @@ const myUrl = process.env.VERCEL_URL
 
 const YoutubeEmbed = ({ embedId , height, width }: Props) => {
 
-  const aspectRatio = (100*height/width).toFixed(2) + '%'
-
+  const aspectRatio = (100*height/width).toFixed(1) + '%'
+  
   return (
-    <div className={`'w-full' relative pb-[${aspectRatio}]`}>
+    <div className={`w-full relative`} style={{paddingBottom:aspectRatio}}>
       <iframe
         width='100%'
         height='100%'
