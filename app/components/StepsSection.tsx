@@ -53,7 +53,6 @@ export default function StepsSection(){
     }
   },[inViewport])
 
-  console.log(inViewport)
   return (
     <section ref={ref}>
       <SafeArea>
