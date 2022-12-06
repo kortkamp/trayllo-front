@@ -24,7 +24,7 @@ add_action('rest_api_init', function () {
             return true;
         },
         'callback' => function () {
-            return get_field('section-cta', 'option');;
+            return get_field('section-cta', 'option');
         },
     ));
 
@@ -34,7 +34,7 @@ add_action('rest_api_init', function () {
             return true;
         },
         'callback' => function () {
-            return get_field('section-passo-a-passo', 'option');;
+            return get_field('section-passo-a-passo', 'option');
         },
     ));
 
@@ -44,7 +44,7 @@ add_action('rest_api_init', function () {
             return true;
         },
         'callback' => function () {
-            return get_field('section-cards-personalizados', 'option');;
+            return get_field('section-cards-personalizados', 'option');
         },
     ));
 
@@ -54,7 +54,7 @@ add_action('rest_api_init', function () {
             return true;
         },
         'callback' => function () {
-            return get_field('section-extras', 'option');;
+            return get_field('section-extras', 'option');
         },
     ));
 
@@ -64,7 +64,7 @@ add_action('rest_api_init', function () {
             return true;
         },
         'callback' => function () {
-            return get_field('section-features', 'option');;
+            return get_field('section-features', 'option');
         },
     ));
 
@@ -74,7 +74,7 @@ add_action('rest_api_init', function () {
             return true;
         },
         'callback' => function () {
-            return get_field('section-sobre', 'option');;
+            return get_field('section-sobre', 'option');
         },
     ));
 
@@ -84,7 +84,7 @@ add_action('rest_api_init', function () {
             return true;
         },
         'callback' => function () {
-            return get_field('section-footer', 'option');;
+            return get_field('section-footer', 'option');
         },
     ));
 });
