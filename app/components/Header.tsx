@@ -1,7 +1,23 @@
 import Image from 'next/image'
 import { useState } from 'react'
-import AppButton from './AppButton'
 import AppLink from './AppLink'
+
+
+interface HeaderProps {
+  headerData : {
+    logo: {
+      titulo: string,
+      imagem: boolean
+    },
+    menu: 
+      {
+        titulo: string,
+        link: string,
+        cta: boolean,
+        target: string
+      }[],
+    }
+}
 
 
 const MenuIcon = () => (
@@ -23,7 +39,7 @@ const CloseIcon = () => (
 )
 
 
-export default function Header() {
+export default function Header({headerData}:HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleToggleMenu = () =>{
@@ -44,10 +60,17 @@ export default function Header() {
         </button>
         <div className={`max-md:fixed inset-0 max-md:bg-primary max-md:bg-opacity-95 ${!isMenuOpen ? 'max-md:hidden' : 'z-50'}` }>
           <div className={`flex items-center justify-between gap-12   max-md:flex-col max-md:py-10 `}>
-            <AppLink href={''}>Integração</AppLink>
-            <AppLink href={''}>Extras</AppLink>
-            <AppLink href={''}>Sobre</AppLink>
-            <AppButton variant='secondary' size='sm'>Teste Grátis</AppButton>
+            {headerData.menu.map((menu, index) => (
+              <AppLink 
+                key={index} 
+                href={menu.link} 
+                variant={menu.target as any} 
+                size={menu.target === '_blank' ? 'xs' : 'md'}
+                onClick={handleCloseMenu}
+                >
+                  {menu.titulo}
+              </AppLink>    
+            ))}
             <button onClick={handleCloseMenu} className='md:hidden absolute right-1 top-5'>
               <CloseIcon />
             </button>
