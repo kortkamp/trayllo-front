@@ -1,0 +1,42 @@
+---
+version: "3.9"
+services:
+  landing_page:
+    image: ghcr.io/albreis/trayllo_front:latest
+    build: .
+    command: /bin/bash -c 'cd /app && npm run start'
+    restart: always
+    deploy:
+      mode: replicated
+      replicas: 3
+      placement:
+        max_replicas_per_node: 1
+        constraints:
+          - node.labels.vscode==1
+      labels:
+        - traefik-public
+        - traefik.enable=true
+        - traefik.docker.network=traefik-public
+        - traefik.http.middlewares.https-redirect.redirectscheme.scheme=https
+        - traefik.http.middlewares.https-redirect.redirectscheme.permanent=true
+        - traefik.http.routers.trayllo-www-http.rule=(Host(`www.trayllo.com.br`) || Host(`trayllo.com.br`)) && PathPrefix(`/`)
+        - traefik.http.routers.trayllo-www-http.entrypoints=http
+        - traefik.http.routers.trayllo-www-https.rule=(Host(`www.trayllo.com.br`) || Host(`trayllo.com.br`)) && PathPrefix(`/`)
+        - traefik.http.routers.trayllo-www-https.entrypoints=https
+        - traefik.http.routers.trayllo-www-https.tls=true
+        - traefik.http.routers.trayllo-www-https.tls.certresolver=le
+        - traefik.http.services.trayllo-https.loadbalancer.server.port=3000
+
+        - cloudflare.zone-id=64eeb5ccc62ba6779be3872ed6399b96
+        - cloudflare.trayllo.com.br.type=A
+        - cloudflare.trayllo.com.br.content=194.163.176.202
+        - cloudflare.trayllo.com.br.proxied=false
+        - cloudflare.www.trayllo.com.br.type=A
+        - cloudflare.www.trayllo.com.br.content=194.163.176.202
+        - cloudflare.www.trayllo.com.br.proxied=true
+    networks:
+      - traefik-public
+networks:
+  traefik-public:
+    external: true
+...
