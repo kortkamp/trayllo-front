@@ -65,7 +65,7 @@ export default function StepsSection(){
           </div>
           <div className="w-[409px] max-md:w-full flex flex-col gap-7">
             <div>
-              <h2 className="text-primary text-xl max-md:text-lg font-extrabold font-sans uppercase leading-tight">Veja como é fácil integrar</h2>
+              <h2 id="integracao" className="text-primary text-xl max-md:text-lg font-extrabold font-sans uppercase leading-tight">Veja como é fácil integrar</h2>
               <TextSpan >É muito simples! Siga estes passos e em breve estará a usufruir de todas as vantagens.</TextSpan>
             </div>
             <Step step={1} title="Conectar sua loja" className={enteredView ? `translate-x-0 delay-300` : 'translate-x-[100vw]'}>Digite a URL da sua Loja Tray Commerce e clique no botão para conectar</Step>

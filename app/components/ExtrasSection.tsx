@@ -12,7 +12,7 @@ export default function ExtrasSection(){
     <section>
       <SafeArea>
         <div className="">
-          <header className="w-[558px] max-md:w-full m-auto"><h2 className="text-primary text-xl max-md:text-lg font-extrabold text-center py-10 font-sans">O que posso fazer com essa integração?</h2></header>
+          <header className="w-[558px] max-md:w-full m-auto"><h2 id='extras' className="text-primary text-xl max-md:text-lg font-extrabold text-center py-10 font-sans">O que posso fazer com essa integração?</h2></header>
           <div className="rounded-md overflow-hidden">
             <YoutubeEmbed  embedId={YT_VIDEO_ID} width={VIDEO_WIDTH} height={VIDEO_HEIGHT}/>
           </div>
