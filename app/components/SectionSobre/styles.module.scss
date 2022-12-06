@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;800&display=swap');
+
+.sectionSobre {
+  font-family: 'Open Sans', sans-serif;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f6f6f6;
+  padding: 4rem 0;
+
+  .contentSobre {
+    width: 70%;
+    min-width: 786px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .sobreText {
+      display: flex;
+      flex-direction: column;
+      max-width: 600px;
+      padding: 2rem;
+
+      h1 {
+        color: #490177;
+        font-size: 48px;
+        font-weight: 800;
+      }
+
+      p {
+        line-height: 1.5;
+        margin: 1.5rem 0;
+        position: relative;
+
+        &::after {
+          content: '';
+          position: absolute;
+          height: 100%;
+          width: 130%;
+          top: 0;
+          left: -30%;
+          background: #f6f6f6;
+          animation: appearText 4s linear forwards;
+          -webkit-animation: appearText 4s linear forwards;
+          transform: matrix(1, 0, -0.23, 1, 0, 0);
+          -webkit-transform: matrix(1, 0, -0.23, 1, 0, 0);
+          -moz-transform: matrix(1, 0, -0.23, 1, 0, 0);
+          -ms-transform: matrix(1, 0, -0.23, 1, 0, 0);
+          -o-transform: matrix(1, 0, -0.23, 1, 0, 0);
+        }
+
+        @keyframes appearText {
+          to {
+            left: 130%;
+          }
+        }
+
+      }
+
+      button {
+        width: 271px;
+        height: 51px;
+        background-color: #490177;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -ms-border-radius: 5px;
+        -o-border-radius: 5px;
+        padding: 15px 5px;
+        cursor: pointer;
+      }
+    }
+
+    .sobreImgs {
+      display: flex;
+      width: 668.86px;
+      height: 413.3px;
+
+      img {
+        opacity: 0;
+        width: 80%;
+        min-width: 200px;
+        height: 100%;
+        border-radius: 5px;
+        box-shadow: 2px 2px 2px 2px #f6f6f6;
+        animation: fade 2s ease-out forwards;
+        -webkit-animation: fade 2s ease-out forwards;
+        transform: matrix(0.98, 0, -0.23, 1, 0, 0);
+        -webkit-transform: matrix(0.98, 0, -0.23, 1, 0, 0);
+        -moz-transform: matrix(0.98, 0, -0.23, 1, 0, 0);
+        -ms-transform: matrix(0.98, 0, -0.23, 1, 0, 0);
+        -o-transform: matrix(0.98, 0, -0.23, 1, 0, 0);
+        animation-delay: .4s;
+      }
+
+      img:nth-child(2) {
+        animation-delay: .7s;
+      }
+
+      @keyframes fade {
+        to {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 850px) {
+
+  .contentSobre {
+    flex-direction: column;
+    width: 90%;
+
+    .sobreText {
+      width: 80%;
+
+      p {
+        width: 80%;
+      }
+      button {
+        width: 100%;
+        min-width:400px;
+      }
+    }
+
+    .sobreImgs {
+      img {
+        width: 60%;
+      }
+    }
+  }
+
+}

@@ -53,7 +53,7 @@ module.exports = {
         },
         slideIn2: {
           '0%': { transform: 'translateX(-100vw)' },
-          '50%': { transform: 'translateX(-50vw)' },
+          '50%': { transform: 'translateX(-100vw)' },
           '100%': { transform: 'translateX(0vw)' },
         },
         slideIn3: {
