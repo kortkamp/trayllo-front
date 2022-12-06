@@ -4,6 +4,8 @@ import SafeArea from "./SafeArea";
 import YoutubeEmbed from "./YoutubeEmbed";
 
 const YT_VIDEO_ID = 'xky48zyL9iA'
+const VIDEO_WIDTH = 895
+const VIDEO_HEIGHT = 559
 
 
 function TextSpan({children}:{children:string}){
@@ -43,7 +45,7 @@ export default function StepsSection(){
 
   const [enteredView, setEnteredView] = useState(false);
 
-  const inViewport = useIntersection(ref, '-400px'); // Trigger if 200px is visible from the element
+  const inViewport = useIntersection(ref, '-200px'); // Trigger if 200px is visible from the element
 
   useEffect(()=>{
     if (inViewport) {
@@ -54,18 +56,21 @@ export default function StepsSection(){
   return (
     <section ref={ref}>
       <SafeArea>
-        <div className="mt-16 flex justify-between gap-24 overflow-hidden">
-          <div className="w-[692px] h-[600px] rounded-md overflow-hidden">
-            <YoutubeEmbed embedId={YT_VIDEO_ID} height='100%' width="100%"></YoutubeEmbed>
+        <div className="mt-16 flex justify-between gap-24 overflow-hidden max-md:flex-col-reverse">
+          <div>
+            <div className="w-[692px] max-md:w-full rounded-md overflow-hidden">
+              <YoutubeEmbed embedId={YT_VIDEO_ID} width={VIDEO_WIDTH} height={VIDEO_HEIGHT} ></YoutubeEmbed>
+            </div>
+
           </div>
-          <div className="w-[409px] flex flex-col gap-7">
+          <div className="w-[409px] max-md:w-full flex flex-col gap-7">
             <div>
-              <h2 className="text-primary text-xl font-extrabold font-sans uppercase leading-tight">Veja como é fácil integrar</h2>
+              <h2 className="text-primary text-xl max-md:text-lg font-extrabold font-sans uppercase leading-tight">Veja como é fácil integrar</h2>
               <TextSpan >É muito simples! Siga estes passos e em breve estará a usufruir de todas as vantagens.</TextSpan>
             </div>
-            <Step step={1} title="Conectar sua loja" className={enteredView ? `translate-x-0 ` : 'translate-x-[100vw]'}>Digite a URL da sua Loja Tray Commerce e clique no botão para conectar</Step>
-            <Step step={2} title="Conectar o trello" className={enteredView ? `translate-x-0  delay-300` : 'translate-x-[100vw]'}>Autorize o acesso ao seu Trello e em seguida selecione o Board e a Lista onde seus cartões serão adicionados.</Step>
-            <Step step={3} title="Pronto" className={enteredView ? `translate-x-0  delay-[600ms]` : 'translate-x-[100vw]'}>Você já está pronto para começar e organizar suas vendas de forma prática e rápida</Step>
+            <Step step={1} title="Conectar sua loja" className={enteredView ? `translate-x-0 delay-300` : 'translate-x-[100vw]'}>Digite a URL da sua Loja Tray Commerce e clique no botão para conectar</Step>
+            <Step step={2} title="Conectar o trello" className={enteredView ? `translate-x-0  delay-[600ms]` : 'translate-x-[100vw]'}>Autorize o acesso ao seu Trello e em seguida selecione o Board e a Lista onde seus cartões serão adicionados.</Step>
+            <Step step={3} title="Pronto" className={enteredView ? `translate-x-0  delay-[900ms]` : 'translate-x-[100vw]'}>Você já está pronto para começar e organizar suas vendas de forma prática e rápida</Step>
           </div>
         </div>
       </SafeArea>

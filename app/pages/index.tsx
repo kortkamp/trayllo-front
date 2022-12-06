@@ -5,12 +5,20 @@ import { Fragment } from 'react'
 import CardPersonalizado from '../components/CardPersonalizado/CardPersonalizado'
 import ExtrasSection from '../components/ExtrasSection'
 import StepsSection from '../components/StepsSection'
+import SectionSobre from '../components/SectionSobre/Sobre'
 
 export default function index() {
   return (
-    <Fragment>
+    <div className=''>
+      <HeroSection />
+      <CtaSection />
+      <StepsSection />
       <CardPersonalizado></CardPersonalizado>
-      <Footer></Footer>
-    </Fragment>
+      <ExtrasSection />
+      <SectionSobre />
+      <Fragment>
+        <Footer></Footer>
+      </Fragment>
+    </div>
   )
 }
