@@ -2,8 +2,10 @@ import CtaSection from '../components/CtaSection'
 import HeroSection, {HeroPropsData} from '../components/HeroSection'
 import Footer from '../components/Footer/Footer'
 import { Fragment } from 'react'
+import CardPersonalizado from '../components/CardPersonalizado/CardPersonalizado'
 import ExtrasSection from '../components/ExtrasSection'
 import StepsSection from '../components/StepsSection'
+import SectionSobre from '../components/SectionSobre/Sobre'
 
 interface PageProps {
   pageData: {
@@ -17,7 +19,9 @@ export default function index({pageData}: PageProps) {
       <HeroSection data={pageData.sectionHeroData} />
       <CtaSection />
       <StepsSection />
+      <CardPersonalizado></CardPersonalizado>
       <ExtrasSection />
+      <SectionSobre />
       <Fragment>
         <Footer></Footer>
       </Fragment>
