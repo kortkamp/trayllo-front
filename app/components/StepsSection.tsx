@@ -57,8 +57,11 @@ export default function StepsSection(){
     <section ref={ref}>
       <SafeArea>
         <div className="mt-16 flex justify-between gap-24 overflow-hidden max-md:flex-col-reverse">
-          <div className="w-[692px] max-md:w-full rounded-md overflow-hidden">
-            <YoutubeEmbed embedId={YT_VIDEO_ID} width={VIDEO_WIDTH} height={VIDEO_HEIGHT} ></YoutubeEmbed>
+          <div>
+            <div className="w-[692px] max-md:w-full rounded-md overflow-hidden">
+              <YoutubeEmbed embedId={YT_VIDEO_ID} width={VIDEO_WIDTH} height={VIDEO_HEIGHT} ></YoutubeEmbed>
+            </div>
+
           </div>
           <div className="w-[409px] max-md:w-full flex flex-col gap-7">
             <div>
