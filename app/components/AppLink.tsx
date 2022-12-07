@@ -1,4 +1,4 @@
-import { ReactNode } from "react"
+import { CSSProperties, ReactNode } from "react"
 import {clsx} from 'clsx'
 import Link from "next/link";
 
@@ -9,13 +9,14 @@ export interface AppLinkProps {
   className?: string
   href: string
   onClick? : ()=>void
+  style?: CSSProperties
 }
 
 export default function AppLink({ size='md', variant='primary', children, className, ...props}: AppLinkProps) {
   return (
     <Link 
       className={clsx(
-        ' whitespace-nowrap uppercase font-sans flex items-center',
+        ' whitespace-nowrap uppercase font-sans flex items-center justify-center',
         {
           'text-white font-bold': variant === 'primary' || variant === '',
           'text-primary font-bold': variant === 'secondary',
