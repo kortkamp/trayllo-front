@@ -36,8 +36,8 @@ export default function CtaSection({ data }:Props){
             <div className="bg-white h-5 w-5 rounded-full"></div>
           </div>
             <div className="flex flex-col max-md:pl-4 opacity-70">
-              {data.conteudo.map(conteudo => (
-                  <span className="text-primary-light text-md font-bold" style={{color:conteudo.cor}}>
+              {data.conteudo.map((conteudo, index) => (
+                  <span key={index} className="text-primary-light text-md font-bold" style={{color:conteudo.cor}}>
                     {conteudo.texto}
                   </span>
               ))}
