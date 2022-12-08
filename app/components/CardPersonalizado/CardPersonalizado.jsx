@@ -22,7 +22,7 @@ export default function CardPersonalizado() {
               <p className="text-[3em] text-[#490177] font-extrabold mb-5 leading-snug">
                 Personalize seus cards no Trello
               </p>
-              <p class="text-slate-600 mb-5 md:w-5/6">
+              <p className="text-slate-600 mb-5 md:w-5/6">
                 Todos nossos recursos cumprem o mesmo objetivo: facilitar seu
                 dia a dia e potencializar suas vendas. Por isso nós
                 personalizamos o fluxo do trello de acordo com a rotina de sua
@@ -38,12 +38,14 @@ export default function CardPersonalizado() {
                   <Image
                     src={Image8}
                     className="overlay translate-y-52 translate-x-32 img-responsive"
+                    alt="imagem usando o sistema"
                   />
                 </MouseParallaxChild>
                 <MouseParallaxChild factorX={0.7} factorY={0.8} className="z-10 w-5/6 lg:w-auto lg:-translate-y-10">
                   <Image
                     src={Image9}
                     className="overlay img-responsive"
+                    alt="imagem usando o sistema"
                   />
                 </MouseParallaxChild>
               </div>
