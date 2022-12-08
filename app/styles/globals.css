@@ -38,3 +38,21 @@ a {
 * {
   box-sizing: border-box;
 }
+
+
+.player-wrapper {
+  width: auto; 
+  height: auto; 
+}
+.react-player {
+  /* padding-top: 56.25%;  */
+  position: relative; 
+}
+
+.react-player > div {
+  position: absolute; 
+  top: 0;
+  lef:0;
+  right:0;
+  bottom:0;
+}

@@ -1,35 +1,34 @@
-import PropTypes from "prop-types";
+import dynamic from "next/dynamic";
+import { OnProgressProps } from "react-player/base";
+const ReactPlayer = dynamic(() => import("react-player/lazy"), { ssr: false });
 
 interface Props {
-  embedId: string
+  videoUrl: string
   height: number
   width: number
+  onProgress?: (state:OnProgressProps)=> void
 }
 
-const myUrl = process.env.VERCEL_URL
+// const myUrl = process.env.VERCEL_URL
 
-const YoutubeEmbed = ({ embedId , height, width }: Props) => {
+const YoutubeEmbed = ({ videoUrl , height, width , onProgress }: Props) => {
 
-  const aspectRatio = (100*height/width).toFixed(1) + '%'
+  console.log(height, width)
+
+  const aspectRatio = (100*height/width).toFixed(2) + '%'
   
   return (
-    <div className={`w-full relative`} style={{paddingBottom:aspectRatio}}>
-      <iframe
-        width='100%'
-        height='100%'
-        src={`https://www.youtube.com/embed/${embedId}?origin=${myUrl}`}
-        frameBorder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowFullScreen
-        title="Embedded youtube"
-        className="w-full h-full absolute "
+    <div className={`w-full relative`} style={{ width: 'auto', height:'auto'}}>
+      <ReactPlayer 
+        url={videoUrl} 
+        onProgress={onProgress} 
+        className={'react-player'} 
+        width='100%' 
+        height='100%' 
+        style={{paddingTop: aspectRatio}}
       />
     </div>
   )
-};
-
-YoutubeEmbed.propTypes = {
-  embedId: PropTypes.string.isRequired
 };
 
 export default YoutubeEmbed;
