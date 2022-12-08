@@ -1,12 +1,35 @@
-import { useEffect, useRef, useState } from "react";
+import { CSSProperties, useEffect, useRef, useState } from "react";
 import { useIntersection } from "../hooks/useIntersection";
 import SafeArea from "./SafeArea";
 import YoutubeEmbed from "./YoutubeEmbed";
 
-const YT_VIDEO_ID = 'xky48zyL9iA'
-const VIDEO_WIDTH = 895
-const VIDEO_HEIGHT = 559
+export interface StepsPropsData {
+  titulo: string,
+  descricao: string,
+  passos: 
+    {
+      marcador: {
+        conteudo: 1,
+        background_color_inativo: string,
+        background_color_ativo: string
+      },
+      titulo: {
+        texto_1: string,
+        texto_2: string
+      },
+      descricao: string
+    }[],
+  video: string
+  videoData: {
+    id: string,
+    width: number,
+    height: number,
+  }
+}
 
+interface Props {
+  data: StepsPropsData
+}
 
 function TextSpan({children}:{children:string}){
   return (
@@ -16,20 +39,25 @@ function TextSpan({children}:{children:string}){
 
 interface StepProps {
   step: number,
+  mark?:{
+    backgroundColor:string
+  } 
+  preTitle?:string,
   title: string,
   children: string,
   className?: string,
+  style?: CSSProperties,
 }
 
-function Step({step, title, children , className}:StepProps){
+function Step({step,preTitle, title, children , className, style, mark}:StepProps){
   return (
-    <div className={`flex justify-between ${className} transition-transform`}>
-      <div className="rounded-full bg-primary h-10 w-10 flex items-center justify-center ">
+    <div className={`flex justify-between ${className} transition-transform`} style={style}>
+      <div className="rounded-full  h-10 w-10 flex items-center justify-center " style={{...mark}} >
         <span className="text-white text-[28px] font-orelega">{step}</span>
       </div>
       <div className="ml-4 flex-1">
         <div className="font-sans text-[21px]">
-          <span className="font-extrabold pr-2">Passo {step}</span>
+          <span className="font-extrabold pr-2">{preTitle}</span>
           <span>{title}</span>
         </div>
         <TextSpan>{children}</TextSpan>
@@ -38,9 +66,7 @@ function Step({step, title, children , className}:StepProps){
   )
 }
 
-
-export default function StepsSection(){
-
+export default function StepsSection({data}: Props){
   const ref = useRef(null);
 
   const [enteredView, setEnteredView] = useState(false);
@@ -59,18 +85,27 @@ export default function StepsSection(){
         <div className="mt-16 flex justify-between gap-24 overflow-hidden max-md:flex-col-reverse">
           <div>
             <div className="w-[692px] max-md:w-full rounded-md overflow-hidden">
-              <YoutubeEmbed embedId={YT_VIDEO_ID} width={VIDEO_WIDTH} height={VIDEO_HEIGHT} ></YoutubeEmbed>
+              <YoutubeEmbed videoUrl={data.video} width={data.videoData.width} height={data.videoData.height} ></YoutubeEmbed>
             </div>
-
           </div>
           <div className="w-[409px] max-md:w-full flex flex-col gap-7">
             <div>
-              <h2 id="integracao" className="text-primary text-xl max-md:text-lg font-extrabold font-sans uppercase leading-tight">Veja como é fácil integrar</h2>
-              <TextSpan >É muito simples! Siga estes passos e em breve estará a usufruir de todas as vantagens.</TextSpan>
+              <h2 id="integracao" className="text-primary text-xl max-md:text-lg font-extrabold font-sans uppercase leading-tight">{data.titulo}</h2>
+              <TextSpan >{data.descricao}</TextSpan>
             </div>
-            <Step step={1} title="Conectar sua loja" className={enteredView ? `translate-x-0 delay-300` : 'translate-x-[100vw]'}>Digite a URL da sua Loja Tray Commerce e clique no botão para conectar</Step>
-            <Step step={2} title="Conectar o trello" className={enteredView ? `translate-x-0  delay-[600ms]` : 'translate-x-[100vw]'}>Autorize o acesso ao seu Trello e em seguida selecione o Board e a Lista onde seus cartões serão adicionados.</Step>
-            <Step step={3} title="Pronto" className={enteredView ? `translate-x-0  delay-[900ms]` : 'translate-x-[100vw]'}>Você já está pronto para começar e organizar suas vendas de forma prática e rápida</Step>
+            {data.passos.map((passo, index)=> (
+              <Step 
+                key={index}
+                step={passo.marcador.conteudo} 
+                mark={{backgroundColor: passo.marcador.background_color_ativo}}
+                preTitle={passo.titulo.texto_1}
+                title={passo.titulo.texto_2}
+                className={enteredView ? `translate-x-0` : 'translate-x-[100vw]'}
+                style={{transitionDelay: `${(index + 1) * 300 }ms`}}
+              >
+                  {passo.descricao}
+              </Step>
+            ))}
           </div>
         </div>
       </SafeArea>
